@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Martian {
     public String name;
-    private static int count;
+    public static int count;
     private Random rand = new Random();
 
 
@@ -38,11 +38,13 @@ public class Martian {
     }
     public static Martian[] invade(){
         Random rand = new Random();
-        Martian[] invaders = new Martian[rand.nextInt(8)+ 2];
+        int num = rand.nextInt(9) + 2;
+        Martian[] invaders = new Martian[num];
 
-        for (int i = 0; i < invaders.length; i++){
+        for (int i = 0; i < num; i++){
             Martian newMartian = new Martian();
             invaders[i] = newMartian;
+            invaders[i].doSomething();
         }
         return invaders;
     }

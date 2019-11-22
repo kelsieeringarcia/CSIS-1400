@@ -1,15 +1,22 @@
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
         test();
+
+        System.out.println("count: " + Martian.count);
         Martian[] invaders = Martian.invade(13);
-        Martian[] invaders2 = Martian.invade();
-        int unknowninvaders = invaders2.length;
-
-
         for (int i = 0; i < invaders.length; i++){
             System.out.println(invaders[i]);
         }
+        Martian[] unknownInvaders = Martian.invade();
+        for (Martian el: unknownInvaders) {
+            el.doSomething();
+
+        }
+
+
     }
 
     private static void test() {
